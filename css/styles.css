@@ -116,7 +116,7 @@ footer {
 	height: 100%;
 	position: fixed;
 	top: 0;
-	/* visibility: hidden; */
+	visibility: hidden;
 }
 
 .modal {
