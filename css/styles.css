@@ -8,7 +8,27 @@
 
 body {
 	background: #fff;
+	color: #111;
 	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+p {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	color: #444;
 }
 
 .wrapper {
@@ -53,6 +73,7 @@ header {
 	color: #111;
 	margin-bottom: 10px;
 }
+
 .hero .intro p {
 	color: rgba(0, 0, 0, 0.7);
 	font-size: 18px;
@@ -68,11 +89,19 @@ main {
 	margin: 50px 0;
 }
 
+main h1 {
+	margin-bottom: 20px;
+}
+
 main h2 {
 	font-size: 24px;
 	color: #111;
 	line-height: 28px;
 	margin-bottom: 20px;
+}
+
+main > p {
+	margin-bottom: 30px;
 }
 
 main .content {
@@ -101,9 +130,9 @@ main .content p {
 }
 
 /*=== FOOTER ===*/
-footer {
-	padding: 23px 0;
+footer p {
 	background: #eee;
+	padding: 23px 0;
 	font-size: 14px;
 	color: #999;
 	text-align: center;
@@ -117,14 +146,16 @@ footer {
 	position: fixed;
 	top: 0;
 	visibility: hidden;
+	display: flex;
+	place-content: center;
 }
 
 .modal {
 	background-color: #fff;
 	width: 90%;
 	max-width: 660px;
-	min-height: 412px;
-	margin: 10vh auto;
+	height: max-content;
+	margin: auto;
 	position: relative;
 	border-radius: 16px;
 	padding: 30px;
@@ -146,14 +177,16 @@ footer {
 }
 
 .modal-content .card p {
-	font-size: 21px;
-	line-height: 1.8;
+	font-size: 18px;
+	line-height: 21px;
 	color: #777;
 	text-align: center;
 }
 
 .modal-content button {
 	font-size: 16px;
+	line-height: 19px;
+	background: none;
 	color: #999;
 	display: block;
 	border: none;
