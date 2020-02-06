@@ -205,6 +205,14 @@ footer p {
 	display: inline-block;
 }
 
+.topic-content.hide {
+	display: none;
+}
+
+.topic-content.show {
+	display: block;
+}
+
 .topic button {
 	font-size: 12px;
 	font-weight: 700px;

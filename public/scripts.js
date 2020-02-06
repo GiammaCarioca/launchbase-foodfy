@@ -1,21 +1,25 @@
 const cards = document.getElementsByClassName('card')
+const buttons = document.getElementsByClassName('toggleContent')
 
 for (let card of cards) {
 	card.addEventListener('click', function() {
-		console.log('clicou no card')
+		const recipeId = card.getAttribute('id')
+		window.location.href = `/recipes/${recipeId}`
 	})
 }
 
-// const showHides = document.querySelectorAll('h4')
+for (let button of buttons) {
+	button.addEventListener('click', function() {
+		if (!button) return
 
-// for (showHide of showHides) {
-// 	let selector = document.querySelectorAll('.topic-content')
+		let details = button.parentElement.nextElementSibling
 
-// 	showHide.addEventListener('click', function() {
-// 		if (showHide.innerHTML === 'MOSTRAR') {
-// 			alert('cliquei no mostrar')
-// 		} else if (showHide.innerHTML === 'ESCONDER') {
-// 			alert('cliquei no esconder')
-// 		}
-// 	})
-// }
+		if (button.innerHTML === 'MOSTRAR') {
+			button.innerHTML = 'ESCONDER'
+			return details.classList.remove('hide')
+		} else if (button.innerHTML === 'ESCONDER') {
+			button.innerHTML = 'MOSTRAR'
+			return details.classList.add('hide')
+		}
+	})
+}
