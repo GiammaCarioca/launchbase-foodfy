@@ -21,7 +21,7 @@ server.get('/', (req, res) => {
 		recipesFiltered.push(recipes[i])
 	}
 
-	return res.render('home', { items: recipes })
+	return res.render('home', { recipes: recipesFiltered })
 })
 
 server.get('/about', (req, res) => {
@@ -29,15 +29,7 @@ server.get('/about', (req, res) => {
 })
 
 server.get('/recipes', (req, res) => {
-	let recipesFiltered = []
-
-	for (let i = 0; i < 6; i++) {
-		const obj = recipes[i]
-		obj.index = 1
-		recipesFiltered.push(obj)
-	}
-
-	return res.render('recipes', { items: recipesFiltered })
+	return res.render('recipes', { recipes })
 })
 
 server.get('/recipes/:index', (req, res) => {
@@ -47,7 +39,7 @@ server.get('/recipes/:index', (req, res) => {
 
 	if (!recipe) return res.send('Recipe not found')
 
-	return res.render('recipe', { item: recipe })
+	return res.render('recipe', { recipe })
 })
 
 server.listen(5001, function() {
