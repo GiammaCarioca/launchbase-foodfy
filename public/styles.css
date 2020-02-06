@@ -160,3 +160,67 @@ footer p {
 	color: #999;
 	text-align: center;
 }
+
+/*=== RECIPE PAGE ===*/
+.recipe {
+	margin-bottom: 50px;
+}
+
+.recipe-header img {
+	border-radius: 15px;
+	/* width: 940px;
+	height: 280px; */
+}
+
+.head-group {
+	margin: 50px auto 0;
+	text-align: center;
+}
+
+.head-group h1 {
+	font-size: 36px;
+	font-weight: 700px;
+	line-height: 42px;
+	color: #111;
+}
+
+.head-group p {
+	font-size: 20px;
+	font-weight: 400px;
+	line-height: 24px;
+	color: #777;
+}
+
+.sub-head {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.topic h3 {
+	font-size: 24px;
+	font-weight: 700px;
+	line-height: 24px;
+	color: #111;
+	width: max-content;
+	display: inline-block;
+}
+
+.topic button {
+	font-size: 12px;
+	font-weight: 700px;
+	line-height: 14px;
+	color: #999;
+	border: none;
+	display: inline;
+	vertical-align: baseline;
+	padding: 2px 8px;
+	background: none;
+}
+
+.topic-content li {
+	font-size: 18px;
+	font-weight: 400px;
+	line-height: 28px;
+	color: #444;
+	list-style-position: inside;
+}
