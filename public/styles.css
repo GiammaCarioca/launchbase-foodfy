@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #fff;
+	color: #111;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+p {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	color: #444;
+}
+
+.wrapper {
+	max-width: 940px;
+	margin: 0 auto;
+	/* margin-bottom: 50px;
+	padding: 8px;
+	animation: fadeIn 0.5s ease-in-out;
+	position: relative; */
+}
+
+/*=== HEADER ===*/
+header {
+	margin: 32px 0;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	align-items: center;
+}
+
+.menu {
+	display: grid;
+	grid-template-columns: 240px 1fr;
+	align-items: center;
+}
+
+.menu a {
+	font-size: 16px;
+	color: #111;
+
+	margin-right: 30px;
+	text-decoration: none;
+}
+
+.logo {
+	display: flex;
+	margin-right: 120px;
+}
+
+.links {
+	display: flex;
+}
+
+.links a {
+	margin-right: 30px;
+}
+
+/*=== HERO ===*/
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background: #fbdfdb;
+	border-radius: 30px;
+}
+
+.hero .intro {
+	min-width: 320px;
+	align-self: center;
+	padding-left: 60px;
+}
+
+.hero .intro h1 {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 38px;
+	color: #111;
+	margin-bottom: 10px;
+}
+
+.hero .intro p {
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 18px;
+}
+
+.hero img {
+	justify-self: center;
+	margin-top: 66px;
+}
+
+/*=== MAIN ===*/
+main {
+	margin: 50px 0;
+}
+
+main h1 {
+	margin-bottom: 20px;
+}
+
+main h2 {
+	font-size: 24px;
+	color: #111;
+	line-height: 28px;
+	margin-bottom: 20px;
+}
+
+main > p {
+	margin-bottom: 30px;
+}
+
+main .content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px 20px;
+}
+
+main .content img {
+	width: 100%;
+	border-radius: 15px;
+	margin-bottom: 20px;
+}
+
+main .content h3 {
+	font-size: 18px;
+	line-height: 21px;
+	color: #111;
+	margin-bottom: 5px;
+}
+
+main .content p {
+	font-size: 14px;
+	line-height: 16px;
+	color: #777;
+}
+
+/*=== FOOTER ===*/
+footer p {
+	background: #eee;
+	padding: 23px 0;
+	font-size: 14px;
+	color: #999;
+	text-align: center;
+}
