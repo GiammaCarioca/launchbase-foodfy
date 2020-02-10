@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+}
+
+p {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	color: #444;
+}
+
+header {
+	padding: 26px 0;
+	background: #111;
+	margin-bottom: 30px;
+}
+
+main {
+	margin: 55px 0;
+}
+
+.wrapper {
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+.grid-recipes {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 20px;
+	column-gap: 40px;
+	margin-top: 30px;
+}
+
+.grid-recipes .card {
+	display: flex;
+	column-gap: 20px;
+}
+
+.grid-recipes .card img {
+	max-width: 172px;
+	height: 80px;
+	border-radius: 8px;
+	object-fit: fill;
+}
+
+.grid-recipes .card h2 {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+}
+
+.grid-recipes .card p {
+	font-size: 14px;
+	line-height: 16px;
+	color: #777;
+	margin-bottom: 5px;
+}
+
+.grid-recipes .card a {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+	color: #6558c3;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/*=== RECIPE PAGE ===*/
+.recipe {
+	margin-bottom: 50px;
+}
+
+.recipe-header img {
+	border-radius: 15px;
+}
+
+.head-group {
+	margin-top: 50px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.head-group h1 {
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 42px;
+	color: #111;
+}
+
+.head-group p {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #777;
+}
+
+.topic h2 {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+	color: #111;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.recipe-content li,
+.recipe-content p {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 28px;
+	color: #444;
+}
+
+.recipe-content .topic ul {
+	margin: 0;
+}
+
+.recipe-content .topic li {
+	list-style-type: none;
+}
+
+.recipe-content .topic li:before {
+	content: '-';
+	margin-right: 5px;
+}
+
+.menu-edit {
+	margin-bottom: 24px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.menu-edit a {
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 19px;
+	color: #fff;
+	background: #6558c3;
+	border-radius: 4px;
+	padding: 10px 20px;
+}
+
+.menu-edit p {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+	color: #111;
+}
