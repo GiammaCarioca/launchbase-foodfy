@@ -7,8 +7,8 @@
 {% block content %}
 <div class="wrapper">
   <div class="menu-edit">
-    <p>Receita: {{recipe.title}} </p>
-    <a href="#">Editar receita</a>
+    <h1>Receita: {{recipe.title}} </h1>
+    <a href="/admin/recipes/{{ recipe.id }}/edit">Editar receita</a>
   </div>
 
   <div class="recipe">

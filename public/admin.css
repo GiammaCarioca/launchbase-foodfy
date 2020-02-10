@@ -8,6 +8,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
+	margin-bottom: 50px;
 }
 
 h1 {
@@ -27,10 +28,6 @@ header {
 	padding: 26px 0;
 	background: #111;
 	margin-bottom: 30px;
-}
-
-main {
-	margin: 55px 0;
 }
 
 .wrapper {
@@ -81,10 +78,6 @@ main {
 }
 
 /*=== RECIPE PAGE ===*/
-.recipe {
-	margin-bottom: 50px;
-}
-
 .recipe-header img {
 	border-radius: 15px;
 }
@@ -140,9 +133,10 @@ main {
 }
 
 .menu-edit {
-	margin-bottom: 24px;
+	margin-bottom: 30px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .menu-edit a {
@@ -156,9 +150,41 @@ main {
 	padding: 10px 20px;
 }
 
-.menu-edit p {
+.menu-edit h1 {
 	font-size: 24px;
 	font-weight: 700;
 	line-height: 28px;
 	color: #111;
+}
+
+.menu-edit .action-btn .delete-btn {
+	background: #dc4747;
+	margin-right: 10px;
+}
+
+.item > label {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	display: block;
+	margin-top: 30px;
+}
+
+.item input {
+	width: 100%;
+	min-height: 50px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.item a {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	color: #6558c3;
+	text-decoration-line: none;
+	display: block;
+	margin-top: 10px;
 }
