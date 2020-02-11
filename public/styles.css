@@ -10,6 +10,10 @@ body {
 	background: #fff;
 	color: #111;
 	font-family: 'Roboto', sans-serif;
+
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 h1 {
@@ -34,10 +38,7 @@ p {
 .wrapper {
 	max-width: 940px;
 	margin: 0 auto;
-	/* margin-bottom: 50px;
-	padding: 8px;
-	animation: fadeIn 0.5s ease-in-out;
-	position: relative; */
+	flex-grow: 1;
 }
 
 /*=== HEADER ===*/
