@@ -52,29 +52,26 @@
 
 <div class="item">
   <label for="preparation">Modo de preparo</label>
-  {% if recipe.preparation %}
-  <div>
     {% for step in recipe.preparation %}
+    <div>
       <input
         type="text"
         name="preparation[]"
         value="{{step}}"
         id="preparation"
       >
+    </div>
+    {% else %}
+    <div>
+      <input
+        type="text"
+        name="preparation[]"
+        value=""
+        id="preparation"
+      >
+    </div>
     {% endfor %}
     <a href="#">Adicionar novo passo</a>
-  </div>
-  {% else %}
-  <div>
-    <input
-      type="text"
-      name="preparation[]"
-      value=""
-      id="preparation"
-    >
-    <a href="#">Adicionar novo passo</a>
-  </div>
-  {% endif %}
 </div>
 
 <div class="item">

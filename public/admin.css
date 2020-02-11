@@ -139,6 +139,34 @@ header {
 	align-items: center;
 }
 
+.menu-edit h1 {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+	color: #111;
+}
+
+form .btn {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 19px;
+	color: #fff;
+	border-radius: 4px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+form .delete-btn {
+	background: #dc4747;
+	border: solid 1px #dc4747;
+}
+
+form .save-btn {
+	background: #6558c3;
+	border: solid 1px #6558c3;
+	margin-top: 20px;
+}
+
 .menu-edit a {
 	text-decoration: none;
 	font-size: 16px;
@@ -148,18 +176,6 @@ header {
 	background: #6558c3;
 	border-radius: 4px;
 	padding: 10px 20px;
-}
-
-.menu-edit h1 {
-	font-size: 24px;
-	font-weight: 700;
-	line-height: 28px;
-	color: #111;
-}
-
-.menu-edit .action-btn .delete-btn {
-	background: #dc4747;
-	margin-right: 10px;
 }
 
 .item > label {

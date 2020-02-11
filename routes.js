@@ -46,6 +46,6 @@ router.get('/admin/recipes/:id', show)
 router.get('/admin/recipes/:id/edit', edit)
 // router.post('/admin/recipes', post)
 // router.put('/admin/recipes', put)
-// router.delete('/admin/recipes', destroy)
+router.delete('/admin/recipes', destroy)
 
 module.exports = router

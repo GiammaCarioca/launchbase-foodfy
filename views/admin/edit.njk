@@ -3,16 +3,15 @@
 {% block content %}
 
 <div class="wrapper">
+  <div class="menu-edit">
+    <h1>Editando receita</h1>
+    <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST">
+      <input type="hidden" name="id" value={{ recipe.id }}>
+      <button type="submit" class="btn delete-btn">Deletar</button>
+    </form>
+  </div>
 
-  <form method="POST" action="/recipes?_method=PUT">
-
-    <div class="menu-edit">
-      <h1>Editando receita</h1>
-      <div class="action-btn">
-        <a href="#" class="delete-btn">Deletar</a>
-        <a href="#">Salvar receita</a>
-      </div>
-    </div>
+  <form method="POST" action="/admin/recipes?_method=PUT">
 
     {% include 'admin/fields.njk' %}
 
@@ -22,11 +21,8 @@
       value={{ recipe.id }}
     >
 
-  </form>
+    <button type="submit"class="btn save-btn">Salvar receita</button>
 
-  <form id="form-delete" action="/recipes?_method=DELETE" method="POST">
-    <input type="hidden" name="id" value="{{ recipe.id }}">
-    {# <button type="submit">Deletar</button> #}
   </form>
     
 </div>

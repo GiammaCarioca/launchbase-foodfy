@@ -1,13 +1,14 @@
-const { recipes } = require('../data')
+const fs = require('fs')
+const data = require('../data.json')
 
 exports.index = function(req, res) {
-	return res.render('admin/index', { recipes })
+	return res.render('admin/index', { recipes: data.recipes })
 }
 
 exports.show = function(req, res) {
 	const { id: recipeIndex } = req.params
 
-	const recipe = recipes[recipeIndex]
+	const recipe = data.recipes[recipeIndex]
 
 	if (!recipe) return res.send('Recipe not found')
 
@@ -21,7 +22,7 @@ exports.create = function(req, res) {
 exports.edit = function(req, res) {
 	const { id } = req.params
 
-	const foundRecipe = recipes.find(function(recipe) {
+	const foundRecipe = data.recipes.find(function(recipe) {
 		return id == recipe.id
 	})
 
@@ -32,4 +33,20 @@ exports.edit = function(req, res) {
 	}
 
 	return res.render('admin/edit', { recipe })
+}
+
+exports.delete = function(req, res) {
+	const { id } = req.body
+
+	const filteredRecipes = data.recipes.filter(function(recipe) {
+		return recipe.id != id
+	})
+
+	data.recipes = filteredRecipes
+
+	fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
+		if (err) return res.send('Write error!')
+
+		return res.redirect(`/admin/recipes`)
+	})
 }
