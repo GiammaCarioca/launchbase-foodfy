@@ -79,13 +79,11 @@
 
 <div class="item">
   <label for="extra-info">Informações adicionais</label>
-  <div>
-    <input
-      type="textarea"
-      name="information"
-      value="{{recipe.information}}"
-      id="extra-info"
-    >
-  </div>
+  <textarea
+    name="information"
+    readonly
+    id="extra-info"
+  >
+  {{recipe.information}}
+  </textarea>
 </div>
-
