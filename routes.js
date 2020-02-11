@@ -44,7 +44,7 @@ router.get('/admin/recipes', index)
 router.get('/admin/recipes/create', create)
 router.get('/admin/recipes/:id', show)
 router.get('/admin/recipes/:id/edit', edit)
-// router.post('/admin/recipes', post)
+router.post('/admin/recipes', post)
 // router.put('/admin/recipes', put)
 router.delete('/admin/recipes', destroy)
 

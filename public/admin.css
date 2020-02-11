@@ -206,12 +206,14 @@ form .save-btn {
 	text-indent: -20px;
 }
 
-.item a {
+.item .add-ingredient,
+.item .add-step {
+	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 19px;
 	color: #6558c3;
-	text-decoration-line: none;
-	display: block;
 	margin-top: 10px;
+	border: none;
+	background: none;
 }

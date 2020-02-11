@@ -5,7 +5,7 @@
       type="url"
       name="image_url"
       placeholder="http://"
-      value="{{recipe.image}}"
+      value="{{recipe.image_url}}"
       id="image-recipe"
     >
   </div>
@@ -16,7 +16,7 @@
   <div>
     <input
       type="text"
-      name="name"
+      name="title"
       value="{{recipe.title}}"
       id="title"
     >
@@ -24,54 +24,63 @@
 </div>
 
 <div class="item">
-  <label for="ingredients">Ingredientes</label>
-  {% if recipe.ingredients %}
-  <div>
-    {% for ingredient in recipe.ingredients %}
-      <input
-      type="text"
-      name="ingredients[]"
-      value="{{ingredient}}"
-      id="ingredients"
-      >
-    {% endfor %}
-    <a href="#">Adicionar novo ingrediente</a>
-  </div>
-  {% else %}
+  <label for="title">Autor da receita</label>
   <div>
     <input
-    type="text"
-    name="ingredients[]"
-    value=""
-    id="ingredients"
+      type="text"
+      name="author"
+      value="{{recipe.author}}"
+      id="author"
     >
-    <a href="#">Adicionar novo ingrediente</a>
   </div>
-  {% endif %}
+</div>
+
+<div class="item">
+  <label for="ingredients">Ingredientes</label>
+  <div id="ingredients">
+    <div class="ingredient">
+      {% for ingredient in recipe.ingredients %}
+        <input
+          type="text"
+          name="ingredients[]"
+          value="{{ingredient}}"
+        >
+      {% else %}
+        <input
+          type="text"
+          name="ingredients[]"
+          value=""
+        >
+      {% endfor %}
+    </div>
+  </div>
+  <button type="button" class="add-ingredient">
+    Adicionar novo ingrediente
+  </button>
 </div>
 
 <div class="item">
   <label for="preparation">Modo de preparo</label>
-    {% for step in recipe.preparation %}
-    <div>
-      <input
-        type="text"
-        name="preparation[]"
-        value="{{step}}"
-        id="preparation"
-      >
+  <div id="preparation">
+    <div class="step">
+      {% for step in recipe.preparation %}
+        <input
+          type="text"
+          name="preparation[]"
+          value="{{step}}"
+        >
+      {% else %}
+        <input
+          type="text"
+          name="preparation[]"
+          value=""
+        >
+      {% endfor %}
     </div>
-    {% else %}
-    <div>
-      <input
-        type="text"
-        name="preparation[]"
-        value=""
-        id="preparation"
-      >
-    </div>
-    {% endfor %}
-    <a href="#">Adicionar novo passo</a>
+  </div>
+  <button type="button" class="add-step">
+  Adicionar novo passo
+  </button>
 </div>
 
 <div class="item">
@@ -84,3 +93,37 @@
   {{recipe.information}}
   </textarea>
 </div>
+
+<script>
+  function addIngredient() {
+    const ingredients = document.querySelector("#ingredients");
+    const fieldContainer = document.querySelectorAll(".ingredient");
+
+    const lastStep = fieldContainer[fieldContainer.length - 1].lastElementChild
+
+    const newField = lastStep.cloneNode(true);
+
+    newField.value = "";
+    ingredients.appendChild(newField);
+  }
+
+  function addStep() {
+    const preparation = document.querySelector("#preparation");
+    const fieldContainer = document.querySelectorAll(".step");
+
+    const lastStep = fieldContainer[fieldContainer.length - 1].lastElementChild
+
+    const newField = lastStep.cloneNode(true);
+
+    newField.value = "";
+    preparation.appendChild(newField);
+  }
+
+    document
+    .querySelector(".add-ingredient")
+    .addEventListener("click", addIngredient);
+
+    document
+    .querySelector(".add-step")
+    .addEventListener("click", addStep);
+</script>
