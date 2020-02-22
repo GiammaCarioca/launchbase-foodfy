@@ -27,6 +27,7 @@ router.get('/recipes/:index', (req, res) => {
 })
 
 // Rotas de chefs
+router.get('/admin/chefs', chefs.index)
 router.post('/admin/chefs', chefs.post)
 
 // Rotas de receitas

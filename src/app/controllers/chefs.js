@@ -3,7 +3,11 @@ const db = require('../../config/db')
 
 module.exports = {
 	index(req, res) {
-		return
+		db.query(`SELECT * FROM chefs`, function(err, results) {
+			if (err) return res.send('Database Error!')
+
+			return res.render('admin/index', { chefs: results.rows })
+		})
 	},
 	create(req, res) {
 		return
