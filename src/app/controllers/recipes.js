@@ -34,10 +34,19 @@ module.exports = {
 
 			return res.render('admin/recipes/show', { recipe })
 		})
-		return
 	},
 	edit(req, res) {
-		return
+		Recipe.find(req.params.id, function(recipe) {
+			if (!recipe) return res.send('Recipe not found!')
+
+			recipe.image = recipe.image_url
+			recipe.title = recipe.title
+			recipe.ingredients = recipe.ingredients.toString().split(',')
+			recipe.preparation = recipe.preparation.toString().split(',')
+			recipe.information = recipe.information
+
+			return res.render('admin/recipes/edit', { recipe })
+		})
 	},
 	put(req, res) {
 		const keys = Object.keys(req.body)
@@ -48,18 +57,13 @@ module.exports = {
 			}
 		}
 
-		let {
-			image_url,
-			title,
-			author,
-			ingredients,
-			preparation,
-			information
-		} = req.body
-
-		return
+		Recipe.update(req.body, function() {
+			return res.redirect(`/admin/recipes/${req.body.id}`)
+		})
 	},
 	delete(req, res) {
-		return
+		Recipe.delete(req.body.id, function() {
+			return res.redirect('/admin/recipes')
+		})
 	}
 }
