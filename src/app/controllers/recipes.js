@@ -23,6 +23,17 @@ module.exports = {
 		})
 	},
 	show(req, res) {
+		Recipe.find(req.params.id, function(recipe) {
+			if (!recipe) return res.send('Recipe not found!')
+
+			recipe.image = recipe.image_url
+			recipe.title = recipe.title
+			recipe.ingredients = recipe.ingredients.toString().split(',')
+			recipe.preparation = recipe.preparation.toString().split(',')
+			recipe.information = recipe.information
+
+			return res.render('admin/recipes/show', { recipe })
+		})
 		return
 	},
 	edit(req, res) {
