@@ -1,4 +1,4 @@
-{% extends "admin/layout.njk" %}
+{% extends "admin/recipes/layout.njk" %}
 
 {% block content %}
 
@@ -13,7 +13,7 @@
 
   <form method="POST" action="/admin/recipes?_method=PUT">
 
-    {% include 'admin/fields.njk' %}
+    {% include 'admin/recipes/fields.njk' %}
 
     <input
       type="hidden"
