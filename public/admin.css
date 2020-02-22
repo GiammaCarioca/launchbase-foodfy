@@ -203,7 +203,7 @@ form .save-btn {
 .item textarea {
 	min-height: 250px;
 	resize: none;
-	text-indent: -20px;
+	text-indent: 20px;
 }
 
 .item .add-ingredient,

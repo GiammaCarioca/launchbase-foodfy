@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+
+const chefs = require('./app/controllers/chefs')
 const recipes = require('./app/controllers/recipes')
 
 router.get('/', (req, res) => {
@@ -24,6 +26,10 @@ router.get('/recipes/:index', (req, res) => {
 	return res.render('user/recipe', { recipe })
 })
 
+// Rotas de chefs
+router.post('/admin/chefs', chefs.post)
+
+// Rotas de receitas
 router.get('/admin/recipes', recipes.index)
 router.get('/admin/recipes/create', recipes.create)
 router.get('/admin/recipes/:id', recipes.show)

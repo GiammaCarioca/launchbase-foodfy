@@ -3,10 +3,10 @@ const db = require('../../config/db')
 
 module.exports = {
 	index(req, res) {
-		return res.render('admin/index')
+		return
 	},
 	create(req, res) {
-		return res.render('admin/create')
+		return
 	},
 	post(req, res) {
 		const keys = Object.keys(req.body)
@@ -18,30 +18,20 @@ module.exports = {
 		}
 
 		const query = `
-      INSERT INTO recipes (
-        image,
-				title,
-				ingredients,
-				preparation,
-				information,
+      INSERT INTO chefs (
+        name,
+        avatar_url,
         created_at
-      ) VALUES ($1, $2, $3, $4, $5, $6)
+      ) VALUES ($1, $2, $3)
       RETURNING id
     `
 
-		const values = [
-			req.body.image_url,
-			req.body.title,
-			req.body.ingredients,
-			req.body.preparation,
-			req.body.information,
-			date(Date.now()).iso
-		]
+		const values = [req.body.name, req.body.avatar_url, date(Date.now()).iso]
 
 		db.query(query, values, function(err, results) {
 			if (err) return res.send('Database Error!')
 
-			return res.redirect(`/admin/recipes/${results.rows[0].id}`)
+			return res.redirect(`/admin/chefs/${results.rows[0].id}`)
 		})
 	},
 	show(req, res) {
