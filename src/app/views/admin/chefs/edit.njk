@@ -1,0 +1,40 @@
+{% extends "admin/chefs/layout.njk" %}
+
+{% block content %}
+
+<div class="wrapper">
+  <div class="menu-edit">
+    <h1>Editando chef</h1>
+    <form id="form-delete" action="/admin/chefs?_method=DELETE" method="POST">
+      <input type="hidden" name="id" value={{ chef.id }}>
+      <button type="submit" class="btn delete-btn">Deletar</button>
+    </form>
+  </div>
+
+  <form method="POST" action="/admin/chefs?_method=PUT">
+
+    {% include 'admin/chefs/fields.njk' %}
+
+    <input
+      type="hidden"
+      name="id"
+      value={{ chef.id }}
+    >
+
+    <button type="submit"class="btn save-btn">Salvar chef</button>
+
+  </form>
+    
+</div>
+
+<script>
+  const formDelete = document.querySelector("#form-delete")
+  formDelete.addEventListener("submit", function(e) {
+    const confirmation = confirm("Deseja deletar?")
+    if (!confirmation) {
+      e.preventDefault()
+    }
+  })
+</script>
+
+{% endblock content %}

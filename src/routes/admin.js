@@ -6,7 +6,12 @@ const recipes = require('../app/controllers/recipes')
 
 // Rotas de chefs
 router.get('/chefs', chefs.index)
+router.get('/chefs/create', chefs.create)
+router.get('/chefs/:id', chefs.show)
+router.get('/chefs/:id/edit', chefs.edit)
 router.post('/chefs', chefs.post)
+router.put('/chefs', chefs.put)
+router.delete('/chefs', chefs.delete)
 
 // Rotas de receitas
 router.get('/recipes', recipes.index)

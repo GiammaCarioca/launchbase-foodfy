@@ -1,16 +1,13 @@
-const { date } = require('../../lib/utils')
-const db = require('../../config/db')
+const Chef = require('../models/Chef')
 
 module.exports = {
 	index(req, res) {
-		db.query(`SELECT * FROM chefs`, function(err, results) {
-			if (err) return res.send('Database Error!')
-
-			return res.render('admin/index', { chefs: results.rows })
+		Chef.all(function(chefs) {
+			return res.render('admin/chefs/index', { chefs })
 		})
 	},
 	create(req, res) {
-		return
+		return res.render('admin/chefs/create')
 	},
 	post(req, res) {
 		const keys = Object.keys(req.body)
@@ -21,28 +18,29 @@ module.exports = {
 			}
 		}
 
-		const query = `
-      INSERT INTO chefs (
-        name,
-        avatar_url,
-        created_at
-      ) VALUES ($1, $2, $3)
-      RETURNING id
-    `
-
-		const values = [req.body.name, req.body.avatar_url, date(Date.now()).iso]
-
-		db.query(query, values, function(err, results) {
-			if (err) return res.send('Database Error!')
-
-			return res.redirect(`/admin/chefs/${results.rows[0].id}`)
+		Chef.create(req.body, function(chef) {
+			return res.redirect(`/admin/chefs/${chef.id}`)
 		})
 	},
 	show(req, res) {
-		return
+		Chef.find(req.params.id, function(chef) {
+			if (!chef) return res.send('Chef not found!')
+
+			chef.name = chef.name
+			chef.avatar_url = chef.avatar_url
+
+			return res.render('admin/chefs/show', { chef })
+		})
 	},
 	edit(req, res) {
-		return
+		Chef.find(req.params.id, function(chef) {
+			if (!chef) return res.send('Chef not found!')
+
+			chef.name = chef.name
+			chef.avatar_url = chef.avatar_url
+
+			return res.render('admin/chefs/edit', { chef })
+		})
 	},
 	put(req, res) {
 		const keys = Object.keys(req.body)
@@ -53,18 +51,13 @@ module.exports = {
 			}
 		}
 
-		let {
-			image_url,
-			title,
-			author,
-			ingredients,
-			preparation,
-			information
-		} = req.body
-
-		return
+		Chef.update(req.body, function() {
+			return res.redirect(`/admin/chefs/${req.body.id}`)
+		})
 	},
 	delete(req, res) {
-		return
+		Chef.delete(req.body.id, function() {
+			return res.redirect('/admin/chefs')
+		})
 	}
 }
