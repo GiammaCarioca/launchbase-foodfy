@@ -18,7 +18,7 @@ module.exports = {
 				ingredients,
 				preparation,
 				information,
-        created_at
+				created_at
       ) VALUES ($1, $2, $3, $4, $5, $6, $7)
       RETURNING id
     `

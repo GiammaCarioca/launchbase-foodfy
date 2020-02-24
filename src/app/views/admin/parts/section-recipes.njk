@@ -1,0 +1,15 @@
+<div class="grid-recipes">
+  {% for recipe in recipes %}
+  <div class="card" id="{{recipe.id}}">
+    <img
+      src="{{recipe.image}}"
+      alt="{{recipe.title}}"
+    />
+    <div class="content">
+      <h2>{{recipe.title}}</h2>
+      <p>por {{recipe.author}}</p>
+      <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
