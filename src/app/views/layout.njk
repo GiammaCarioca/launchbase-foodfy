@@ -23,8 +23,19 @@
         <div class="links">
           <a href="/about">Sobre</a>
           <a href="/recipes">Receitas</a>
+          <a href="/chefs">Chefs</a>
         </div>
       </nav>
+
+      <form class="search-menu" action="/recipes" method="GET">
+        <input
+          type="text"
+          name="filter"
+          placeholder="Buscar uma receita"
+          value={{filter}}
+        >
+        <button class="submit-btn" type="submit">Buscar</button>
+      </form>
     </header>
 
     {% block content %}{% endblock %}

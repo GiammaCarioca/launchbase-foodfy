@@ -53,6 +53,20 @@ module.exports = {
 			}
 		)
 	},
+	findBy(filter, callback) {
+		db.query(
+			`
+      SELECT *
+			FROM recipes
+			WHERE recipes.title ILIKE '%${filter}%'
+			`,
+			function(err, results) {
+				if (err) throw `Database Error! ${err}`
+
+				callback(results.rows)
+			}
+		)
+	},
 	update(data, callback) {
 		const query = `
 			UPDATE recipes SET

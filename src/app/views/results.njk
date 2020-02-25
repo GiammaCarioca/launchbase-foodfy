@@ -1,11 +1,13 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-  <title>Receitas Foodfy</title>
+  <title>{{filter}}</title>
 {% endblock %}
 
 {% block content %}
 	<main>
+		<h1>Buscando por... {{filter}}</h1>
+
 		<div class="content">
 			{% for recipe in recipes %}
 			<div class="card food" id="{{recipe.id}}">

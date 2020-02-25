@@ -1,4 +1,4 @@
-const cards = document.getElementsByClassName('card')
+const cards = document.getElementsByClassName('food')
 const buttons = document.getElementsByClassName('toggleContent')
 
 for (let card of cards) {

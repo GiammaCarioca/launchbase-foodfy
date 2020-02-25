@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const chefs = require('../app/controllers/chefs')
-const recipes = require('../app/controllers/recipes')
+const chefs = require('../app/controllers/admin/chefs')
+const recipes = require('../app/controllers/admin/recipes')
 
 // Rotas de chefs
 router.get('/chefs', chefs.index)

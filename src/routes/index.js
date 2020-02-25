@@ -1,30 +1,23 @@
 const express = require('express')
 const router = express.Router()
 
+const recipes = require('../app/controllers/recipes')
+const chefs = require('../app/controllers/chefs')
+
 const admin = require('./admin')
 
 router.use('/admin', admin)
 
-router.get('/', (req, res) => {
-	return res.render('home')
-})
+router.get('/', recipes.index)
 
 router.get('/about', (req, res) => {
 	return res.render('about')
 })
 
-router.get('/recipes', (req, res) => {
-	return res.render('recipes')
-})
+router.get('/recipes', recipes.index)
 
-router.get('/recipes/:index', (req, res) => {
-	const { index: recipeIndex } = req.params
+router.get('/recipes/:id', recipes.show)
 
-	const recipe = recipes[recipeIndex]
-
-	if (!recipe) return res.send('Recipe not found')
-
-	return res.render('recipe', { recipe })
-})
+router.get('/chefs', chefs.index)
 
 module.exports = router
